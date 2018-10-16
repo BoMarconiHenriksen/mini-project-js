@@ -1,7 +1,7 @@
-//var User = require('../models/User');
-var users = require('../models/User.js');
-var mongoose = require("mongoose");
-var User = mongoose.model('User', users.UserSchema);
+require("..//dbSetup.js")();
+let users = require('../models/User');
+let mongoose = require("mongoose");
+let User = mongoose.model('User', users.UserSchema);
 
 function addUSer(firstName, lastName, userName, password, email) {
     var userDetail = {
@@ -18,10 +18,7 @@ function addUSer(firstName, lastName, userName, password, email) {
 }
 
 async function getAllUsers() {
-    console.log('Før get all');
     return await User.find({}).exec();
-
-    console.log('efter get all');
 }
 
 function findByUserName(username) {

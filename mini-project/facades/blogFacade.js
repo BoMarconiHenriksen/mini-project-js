@@ -1,4 +1,8 @@
-let LocationBlog = require('../models/LocationBlog')
+//let LocationBlog = require('../models/LocationBlog')
+require("..//dbSetup.js")();
+var blogs = require('../models/LocationBlog');
+var mongoose = require("mongoose");
+var LocationBlog = mongoose.model('LocationBlog', blogs.UserSchema);
 
 function addLocationBlog(info, author, longitude, latitude) {
     let blogDetails = {
