@@ -1,4 +1,7 @@
-var User = require('../models/User');
+//var User = require('../models/User');
+var users = require('../models/User.js');
+var mongoose = require("mongoose");
+var User = mongoose.model('User', users.UserSchema);
 
 function addUSer(firstName, lastName, userName, password, email) {
     var userDetail = {
