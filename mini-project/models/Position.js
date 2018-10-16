@@ -9,7 +9,7 @@ typisk backend long, lat og front end omvendt!
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 const SECONDS = 1;
-var EXPIRES = 10  * SECONDS ;
+var EXPIRES = 60  * SECONDS ;
 
 var PositionSchema = new Schema({
  //Make sure that next line reflects your User-model
