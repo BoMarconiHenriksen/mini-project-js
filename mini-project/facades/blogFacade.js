@@ -1,4 +1,3 @@
-//let LocationBlog = require('../models/LocationBlog')
 require("..//dbSetup.js")();
 var blogs = require('../models/LocationBlog');
 var mongoose = require("mongoose");
