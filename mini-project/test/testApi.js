@@ -7,6 +7,8 @@ var userFacade = require("../facades/UserFacade");
 
 chai.use(chaiHttp);
 
+// To run the test write npm test.
+
 // OBS lige nu tester vi ikke på test databasen.
 
 describe("REST API Test", function () {
@@ -16,10 +18,11 @@ describe("REST API Test", function () {
     beforeEach køres før hver describe og efter hver describe.
     */
 
-    // before(function (done) {
-    /* this.timeout(require("../settings").MOCHA_TEST_TIMEOUT);
-    dbSetup(require("../settings").TEST_DB_URI); */
-
+    before(function (done) {
+    this.timeout(require("../settings").MOCHA_TEST_TIMEOUT);
+    dbSetup(require("../settings").TEST_DB_URI); 
+    done();
+    });
  
 
 

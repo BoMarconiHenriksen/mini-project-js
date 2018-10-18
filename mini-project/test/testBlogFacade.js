@@ -5,6 +5,7 @@ var User = require('../models/User');
 var LocationBlog = require('../models/LocationBlog');
 var blogFacade = require('../facades/blogFacade');
 
+// Start test with: mocha testBlogFacade.
 
 describe("Test the blog facade and database querries.", function () {
     // Connect to test database before running tests.

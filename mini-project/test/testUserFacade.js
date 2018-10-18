@@ -4,7 +4,7 @@ const dbSetup = require("..//dbSetup");
 var User = require('../models/User');
 var userFacade = require('../facades/userFacade');
 
-// Start test with: npm test
+// Start test with: mocha testUserFacade.
 
 describe("Test the user facade and database querries.", function () {
 
