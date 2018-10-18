@@ -3,7 +3,7 @@ let users = require('../models/User');
 let mongoose = require("mongoose");
 let User = mongoose.model('User', users.UserSchema);
 // Debugging mongoose. Printer til consolen.
-require('mongoose').set('debug', true)
+//require('mongoose').set('debug', true)
 
 function addUSer(firstName, lastName, userName, password, email) {
     var userDetail = {

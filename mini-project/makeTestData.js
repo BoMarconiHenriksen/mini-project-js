@@ -86,13 +86,14 @@ async function createUsers() {
 
     try {
 
-        var blogPromises = [
+        var blogs = await Promise.all ([
             locationBlogCreator("Cool Place", users[0]._id, 26, 28),
             locationBlogCreator("Another Cool Place", users[0]._id, 56, 56),
             locationBlogCreator("Yet Another Cool Place", users[0]._id, 28, 56),
             locationBlogCreator("The coolest Place", users[3]._id, 34, 56),
-        ];
-        var blogs = await Promise.all(blogPromises);
+        ]);
+
+        //var blogs = await Promise.all(blogPromises);
         console.log("Expecting four in blogs: " + blogs.length);
 
     } catch (err) {
@@ -102,10 +103,17 @@ async function createUsers() {
     //Check the virtuals
     //console.log("Slug for a Cool Place", blogs[0].slug);
 
-    //Add a few likes for "a Cool Place"
-    //blogs[0].likedBy.push(users[1]); //Like by Hanne
-    //blogs[0].likedBy.push(users[2]); //Like by Janne
-    //console.log("Likes for a Cool Place", blogs[0].likedByCount);
+    // TODO:
+    //Add a few likes for "a Cool Place". Virker ikke!
+/*     try {
+        blogs[0].likedBy.push(users[1]); //Like by Hanne
+        blogs[0].likedBy.push(users[2]); //Like by Janne
+
+        //console.log("Likes for a Cool Place", blogs[0].likedByCount);
+    } catch(err) {
+        console.log('Error!');
+    }  */
+    
 }
 
 createUsers();

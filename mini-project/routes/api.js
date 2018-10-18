@@ -3,7 +3,8 @@ var router = express.Router();
 var userFacade = require("../facades/UserFacade");
 var blogFacade = require("../facades/blogFacade");
 
-// REST endpoints for User.
+
+// Get all users.
 router.get("/users", async function (req, res, next) {
     try {
         let users = await userFacade.getAllUsers();
@@ -19,7 +20,7 @@ router.get("/users", async function (req, res, next) {
 router.put("/update_user/", async function (req, res, next) {
     try {
         user = req.body;
-        console.log(user);
+        
         let updatedUser = await userFacade.updateUser(user);
 
         res.json(updatedUser);
